@@ -1,7 +1,5 @@
 ﻿
 
-using System;
-using Xunit;
 
 namespace CSharpExamples;
 
@@ -20,5 +18,15 @@ public class TestingDemo
 
         // Did it work right? / Then / Assert
         Assert.Equal(30, answer);
+    }
+    [Theory]
+    [InlineData(10,2, 12)]
+    [InlineData(2,2, 4)]
+    [InlineData(2,20, 22)]
+    public void CanAddTwoIntegersTheory(int x, int y, int expected)
+    {
+        int answer = x + y;
+
+        Assert.Equal(expected, answer);
     }
 }
