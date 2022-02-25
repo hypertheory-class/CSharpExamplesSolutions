@@ -99,7 +99,7 @@ public class ClassDetails
             // something else happens.
         }
 
-       // Assert.Equal(2, "Abba".CountVowels());
+       Assert.Equal(2, "Abba".CountVowels());
 
         var name = "Gonzalez";
 

@@ -26,7 +26,7 @@ namespace CSharpExamples.Extensions
             var total = 0;
             foreach (var letter in sentence)
             {
-                if (vowels.Contains(letter))
+                if (vowels.Contains(char.ToLowerInvariant(letter)))
                 {
                     total += 1;
                 }
