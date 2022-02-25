@@ -20,11 +20,11 @@ public class CollectionClasses
 
         Assert.Equal(19, favoriteNumbers[1]);
         Assert.Equal(4, favoriteNumbers.Count);
-       
+
         Assert.Throws<ArgumentOutOfRangeException>(() => favoriteNumbers[4] = 999);
 
         favoriteNumbers.Add("Tyranosaurex Rex");
-        
+
         var sum = ((int)favoriteNumbers[2]) + ((int)favoriteNumbers[3]);
 
         Assert.Equal(128, sum);
@@ -62,5 +62,46 @@ public class CollectionClasses
 
         Assert.True(stateCodes.ContainsKey("OH"));
         Assert.False(stateCodes.ContainsKey("CA"));
+    }
+
+    [Fact]
+    public void EnumeratingListsAndDictionaries()
+    {
+
+        var numbers = new List<int> { 1, 8, 12, 32 };
+
+
+        foreach (var number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+
+
+        var friends = new Dictionary<char, string>
+{
+    { 's', "Sean" },
+    { 'v', "Violet" },
+    { 'r', "Ray" }
+};
+
+        foreach (var friend in friends.Values)
+        {
+            Console.WriteLine(friend);
+        }
+
+        foreach (var friendKey in friends.Keys)
+        {
+            Console.WriteLine(friendKey);
+        }
+
+        foreach (var kvp in friends)
+        {
+            Console.WriteLine($"The key {kvp.Key} is for {kvp.Value}");
+        }
+
+        foreach (var (k, v) in friends) // this is destructuring into a tuple.
+        {
+            Console.WriteLine($"The key {k} is for {v}");
+        }
     }
 }
