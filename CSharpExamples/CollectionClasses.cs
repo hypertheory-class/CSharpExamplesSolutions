@@ -34,13 +34,33 @@ public class CollectionClasses
     public void UsingGenericsCollections()
     {
         // "Parametric Polymorphism" - 
-        var favoriteNumbers = new List<int>(); // List of Int
-        favoriteNumbers.Add(1);
-        favoriteNumbers.Add(9);
-        favoriteNumbers.Add(20);
-        favoriteNumbers.Add(108);
+        var favoriteNumbers = new List<int>() { 1, 9, 20, 108 };
+        //favoriteNumbers.Add(1);
+        //favoriteNumbers.Add(9);
+        //favoriteNumbers.Add(20);
+        //favoriteNumbers.Add(108);
 
         var sum = favoriteNumbers[2] + favoriteNumbers[3];
         Assert.Equal(128, sum);
+    }
+
+    [Fact]
+    public void Dictionaries()
+    {
+        var favoriteNumbers = new Dictionary<int, int>();
+        favoriteNumbers.Add(32, 8);
+
+        Assert.Equal(8, favoriteNumbers[32]);
+
+        var stateCodes = new Dictionary<string, string> {
+            { "OH", "Ohio" },  // Key-Value Pairs
+            { "KY", "Kentucky" },
+            { "CO", "Colorado" }
+        };
+
+        Assert.Equal("Ohio", stateCodes["OH"]);
+
+        Assert.True(stateCodes.ContainsKey("OH"));
+        Assert.False(stateCodes.ContainsKey("CA"));
     }
 }
