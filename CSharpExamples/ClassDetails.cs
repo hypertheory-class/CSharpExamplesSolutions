@@ -26,4 +26,11 @@ public class ClassDetails
 
        
     }
+
+    [Fact]
+    public void Methods()
+    {
+        // methods should be cohesive with the data of the class.
+
+    }
 }

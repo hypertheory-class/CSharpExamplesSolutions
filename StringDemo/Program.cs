@@ -35,3 +35,4 @@ foreach (var (k,v) in friends) // this is destructuring into a tuple.
 {
     Console.WriteLine($"The key {k} is for {v}");
 }
+
